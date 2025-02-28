@@ -138,6 +138,7 @@ resource "azurerm_container_group" "this" {
   tags = module.this.tags
 }
 
+/*
 module "diagnostic_settings" {
   count = module.this.enabled && var.diagnostic_settings.enabled ? 1 : 0
 
@@ -147,6 +148,7 @@ module "diagnostic_settings" {
   resource_id           = one(azurerm_container_group.this[*].id)
   logs_destinations_ids = var.diagnostic_settings.logs_destinations_ids
 }
+*/
 
 resource "azurerm_user_assigned_identity" "this" {
   count = module.this.enabled && var.identity.user_assigned_identity.enabled ? 1 : 0
