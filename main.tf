@@ -125,7 +125,6 @@ resource "azurerm_container_group" "this" {
     }
   }
 
-/*
   dynamic "diagnostics" {
     for_each = var.container_diagnostics_log_analytics != null ? [var.container_diagnostics_log_analytics] : []
     content {
@@ -135,7 +134,6 @@ resource "azurerm_container_group" "this" {
       }
     }
   }
-*/
 
   tags = module.this.tags
 }
